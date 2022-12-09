@@ -1,70 +1,129 @@
-# Getting Started with Create React App
+# Esta app es un ejemplo sencillo del uso del hook useState de React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Como parte de las clases de programación, con este ejemplo pueden ver cómo funciona el hook useState de React.
 
-## Available Scripts
+## ¿Cómo funciona?
 
-In the project directory, you can run:
+El hook useState de React nos permite manejar el estado de un componente de forma sencilla. Para ello, debemos importar el hook useState de React y crear una variable que almacene el estado y una función que nos permita actualizar el estado.
 
-### `npm start`
+```js
+import React, { useState } from 'react';
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```js
+const [count, setCount] = useState(0);
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+En este ejemplo, la variable count almacena el estado y la función setCount nos permite actualizar el estado. En este caso, el estado es un número que inicialmente vale 0.
 
-### `npm test`
+## ¿Cómo se usa?
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Para usar el hook useState, debemos llamar a la función setCount y pasarle el nuevo valor del estado. Por ejemplo, si queremos incrementar el valor del estado en 1, podemos hacer lo siguiente:
 
-### `npm run build`
+```js
+setCount(count + 1);
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## ¿Cómo se ve?
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Para ver el resultado, podemos usar la variable count en el JSX. Por ejemplo, si queremos mostrar el valor del estado en un párrafo, podemos hacer lo siguiente:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```js
+<p>Has hecho click {count} veces</p>
+```
 
-### `npm run eject`
+## ¿Cómo se actualiza?
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Para actualizar el estado, debemos llamar a la función setCount y pasarle el nuevo valor del estado. Por ejemplo, si queremos incrementar el valor del estado en 1, podemos hacer lo siguiente:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```js
+setCount(count + 1);
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## ¿Cómo se inicializa?
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Para inicializar el estado, debemos pasarle un valor a la función useState. Por ejemplo, si queremos inicializar el estado en 0, podemos hacer lo siguiente:
 
-## Learn More
+```js
+const [count, setCount] = useState(0);
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## ¿Cómo se usa con un formulario?
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Para usar el hook useState con un formulario, debemos pasarle el estado y la función setCount a los atributos value y onChange de los elementos del formulario. Por ejemplo, si queremos usar el hook useState con un input de tipo text, podemos hacer lo siguiente:
 
-### Code Splitting
+```js
+<input type="text" value={name} onChange={e => setName(e.target.value)} />
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## ¿Cómo se usa con un checkbox?
 
-### Analyzing the Bundle Size
+Para usar el hook useState con un checkbox, debemos pasarle el estado y la función setCount a los atributos checked y onChange del elemento del formulario. Por ejemplo, si queremos usar el hook useState con un checkbox, podemos hacer lo siguiente:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```js
+<input type="checkbox" checked={checked} onChange={e => setChecked(e.target.checked)} />
+```
 
-### Making a Progressive Web App
+## ¿Cómo se usa con un select?
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Para usar el hook useState con un select, debemos pasarle el estado y la función setCount a los atributos value y onChange del elemento del formulario. Por ejemplo, si queremos usar el hook useState con un select, podemos hacer lo siguiente:
 
-### Advanced Configuration
+```js
+<select value={selected} onChange={e => setSelected(e.target.value)}>
+  <option value="A">A</option>
+  <option value="B">B</option>
+  <option value="C">C</option>
+</select>
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## ¿Cómo se usa con un textarea?
 
-### Deployment
+Para usar el hook useState con un textarea, debemos pasarle el estado y la función setCount a los atributos value y onChange del elemento del formulario. Por ejemplo, si queremos usar el hook useState con un textarea, podemos hacer lo siguiente:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```js
+<textarea value={text} onChange={e => setText(e.target.value)} />
+```
 
-### `npm run build` fails to minify
+## ¿Cómo se usa con un formulario con selector, checkbox y otros campos?
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Para usar el hook useState con un formulario, debemos pasarle el estado y la función setCount a los atributos value y onChange de los elementos del formulario. Por ejemplo, si queremos usar el hook useState con un formulario, podemos hacer lo siguiente:
+
+```js
+<form>
+  <input type="text" value={name} onChange={e => setName(e.target.value)} />
+  <input type="checkbox" checked={checked} onChange={e => setChecked(e.target.checked)} />
+  <select value={selected} onChange={e => setSelected(e.target.value)}>
+    <option value="A">
+        A
+    </option>
+    <option value="B">
+        B
+    </option>
+    <option value="C">
+        C
+    </option>
+    </select>
+    <textarea value={text} onChange={e => setText(e.target.value)} />
+</form>
+```
+
+Estos son ejemplos de cómo usar el hook useState de React. Para ver el resultado, puedes ver el código o levantar el proyecto con el comando npm start.
+
+## ¿Cómo levantar el proyecto?
+
+Para levantar el proyecto, debes clonar el repositorio y ejecutar el comando npm start.
+
+```bash
+git clone
+cd todo-app-react
+npm install
+npm start
+```
+
+## ¿Cómo funciona el proyecto?
+
+El proyecto está hecho con React y usa el hook useState para manejar el estado de la aplicación. El proyecto tiene 3 componentes: App, TodoList y TodoForm. El componente App es el componente principal y tiene el estado de la aplicación. El componente TodoList muestra la lista de tareas y el componente TodoForm permite agregar tareas.
+
+## Espero que sea de utilidad
+
+Espero que este artículo te haya servido para aprender a usar el hook useState de React. Si te gustó, te invito a que me agregues en LinkedIn. También puedes ver mis otros artículos.
