@@ -6,7 +6,6 @@ export default function TodoApp() {
 
     const [getTitle, setTitle] = useState("");
     const [getTodos, setTodos] = useState([]);
-    const [getCompletedNumber, setCompletedNumber] = useState(0);
 
     function handleChange(e) {
         const value = e.target.value;
