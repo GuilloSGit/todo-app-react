@@ -1,0 +1,167 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+    font-size: 16px;
+    background-color: rgb(0, 0, 0);
+}
+
+#root {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.todoContainer {
+    max-width: 90vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.todoCreateForm {
+    position: sticky;
+    display: flex;
+    justify-content: center;
+    top: 0px;
+    left: 0px;
+    background-color: rgb(55, 168, 172);
+    border: 1px solid #ccc;
+    border-radius: 0 0 5px 5px;
+    padding: 25px;
+    height: 100%;
+    z-index: 1;
+    min-width: calc(98vw);
+    box-shadow: 0px 0px 10px 0px rgba(66, 245, 221, 0.75);
+}
+
+.todoInput {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: calc(80% - 150px);
+    padding: 10px;
+}
+
+@media screen and (max-width: 480px) {
+    .todoCreateForm {
+        flex-direction: column;
+        align-items: center;
+    }
+    .todoInput {
+        width: 80%;
+        margin-bottom: 10px;
+    }
+    .buttonCreate {
+        width: 80%;
+    }
+}
+
+.todosItemsContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+    width: 80%;
+    height: 100%;
+}
+
+.todoButtonsSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.todoTitleSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.todoEdit, .todoInfo {
+    line-height: 1.3;
+    margin: 8px 0 8px 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 15px;
+    min-width: 300px;
+    width: 90%;
+    box-shadow: 0px 0px 6px 0px rgba(66, 245, 221, 0.75);
+}
+
+.todoInfo:hover {
+    animation: enterCard 2s infinite alternate;
+    transition: all 0.3s ease-in-out;
+}
+
+@keyframes enterCard {
+    0% {
+        transform: scale(1);
+        background-color: black;
+        border-color: yellow;
+    }
+    100% {
+        transform: scale(1.06);
+        border-color: aqua;
+    }    
+}
+
+.todoEdit {
+    background-color: rgb(51, 75, 121);
+}
+
+.todoEdit:hover {
+    animation: enterCard 2s infinite alternate;
+    transition: all 0.3s ease-in-out;
+}
+
+.todoUpdateForm {
+    display: flex;
+    justify-content: space-around;
+    padding: 13px;
+}
+
+.todoButton {
+    background-color: rgb(55, 168, 172);
+    border: none;
+    border-radius: 5px;
+    margin: 2px 2px 2px 0; 
+    padding: 7px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.buttonCreate {
+    background-color: rgb(55, 119, 172);
+    border: none;
+    border-radius: 5px;
+    margin: 2px 2px 2px 4px; 
+    padding: 7px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.todoItemTitle {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0;
+    max-width: calc(100% - 105px);
+}
+
+.tasksCount {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    font-size: 10px;
+}
